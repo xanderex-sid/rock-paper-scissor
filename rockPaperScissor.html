@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Prompt</title>
+</head>
+<body>
+    <script>
+        function getComputerChoice() {
+            let value = Math.random(); // a number between 0 and 1
+            if (value < 0.30) return 'r';
+            else if (value >= 0.30 && value < 0.70) return 'p';
+            else return 's';
+        }
+
+        let user = function() {
+            let userInput = prompt("Write a single character (Rock - r, Paper - p, Scissors - s): ");
+            const cc = getComputerChoice();
+            console.log("Computer choice:", cc);
+
+            switch (cc) {
+                case 'r':
+                    switch (userInput.toLowerCase()) {
+                        case 'r':
+                            console.log('Draw');
+                            break;
+                        case 'p':
+                            console.log('You Win!! ;)');
+                            break;
+                        case 's':
+                            console.log("You Lose :(");
+                            break;
+                        default:
+                            console.log("Error: Invalid Input");
+                            break;
+                    }
+                    break;
+                case 'p':
+                    switch (userInput.toLowerCase()) {
+                        case 'r':
+                            console.log("You Lose :(");
+                            break;
+                        case 'p':
+                            console.log('Draw');
+                            break;
+                        case 's':
+                            console.log("You Win!! ;)");
+                            break;
+                        default:
+                            console.log("Error: Invalid Input");
+                            break;
+                    }
+                    break;
+                case 's':
+                    switch (userInput.toLowerCase()) {
+                        case 'r':
+                            console.log("You Win!! ;)");
+                            break;
+                        case 'p':
+                            console.log("You Lose :(");
+                            break;
+                        case 's':
+                            console.log("Draw");
+                            break;
+                        default:
+                            console.log("Error: Invalid Input");
+                            break;
+                    }
+                    break;
+                default:
+                    console.log("Error");
+                    break;
+            }
+        };
+
+    </script>
+</body>
+</html>
